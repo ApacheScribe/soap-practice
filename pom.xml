@@ -14,7 +14,7 @@
 	<name>soap</name>
 	<description>Demo project for Spring Boot using SOAP</description>
 	<properties>
-		<java.version>8</java.version>
+		<java.version>11</java.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -86,16 +86,16 @@
 				<configuration>
 					<schemaLanguage>WSDL</schemaLanguage>
 					<generatePackage>com.example.soap.wsdl</generatePackage>
-					<!-- <schemas>
+					<schemas>
 						<schema>
-							<url>http://localhost:8080/ws/countries.wsdl</url>
+							<url>http://www.thomas-bayer.com/axis2/services/BLZService?wsdl</url>
 						</schema>
-					</schemas> -->
+					</schemas>
 					<generateDirectory>${project.basedir}/src/main/java</generateDirectory>
-					<schemaDirectory>src/main/resources/wsdl</schemaDirectory>
+					<!-- <schemaDirectory>src/main/resources/wsdl</schemaDirectory>
 					<schemaIncludes>
 						<schemaInclude>*.wsdl</schemaInclude>
-					</schemaIncludes>
+					</schemaIncludes> -->
 				</configuration>
 			</plugin>
 		</plugins>

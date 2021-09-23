@@ -1,6 +1,6 @@
 package com.example.soap.config;
 
-import com.example.soap.client.ArticleClient;
+import com.example.soap.client.BankClient;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,11 +17,11 @@ public class SoapClientConfig {
     }
 
     @Bean
-    public ArticleClient articleClient(Jaxb2Marshaller jaxb2Marshaller) {
-        ArticleClient aClient = new ArticleClient();
-        aClient.setDefaultUri("http://localhost:8080/ws/");
-        aClient.setMarshaller(jaxb2Marshaller);
-        aClient.setUnmarshaller(jaxb2Marshaller);
-        return aClient;
+    public BankClient clientConnector(Jaxb2Marshaller jaxb2Marshaller) {
+        BankClient client = new BankClient();
+        client.setDefaultUri("http://www.thomas-bayer.com/axis2/services/BLZService");
+        client.setMarshaller(jaxb2Marshaller);
+        client.setUnmarshaller(jaxb2Marshaller);
+        return client;
     }
 }
